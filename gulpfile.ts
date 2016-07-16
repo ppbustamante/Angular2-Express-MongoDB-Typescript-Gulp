@@ -134,6 +134,6 @@ gulp.task('start', function () {
  * 5. Copy the dependencies.
  */
 
-gulp.task("build", function (callback) {
+gulp.task('build', function (callback) {
     runSequence('clean', 'build:server', 'build:client', 'clientResources', 'libs', callback);
 });

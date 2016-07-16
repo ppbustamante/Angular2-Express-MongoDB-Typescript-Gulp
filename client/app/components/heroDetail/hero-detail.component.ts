@@ -14,15 +14,15 @@ import {HeroService} from "../../services/hero.service";
 })
 
 export class HeroDetailComponent implements OnInit {
+
     @Input() hero: Hero;
     newHero = false;
     error: any;
     navigated = false; // true if navigated here
 
 
-    constructor(
-        private heroService: HeroService,
-        private routeParams: RouteParams) {
+    constructor(private heroService: HeroService, private routeParams: RouteParams) {
+        
     }
 
     ngOnInit() {

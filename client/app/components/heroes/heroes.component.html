@@ -3,6 +3,9 @@
 <div class="error" *ngIf="error">{{error}}</div>
 <button class="buttonCls topButton" (click)="addHero()">Add New Hero</button>
 <ul class="heroes">
+    <!--  al hacer click en cualquier elemento de la lista llama al metodo onSelect, queda el atributo selected 
+          hero con el heroe selecccionado por lo tanto queda con la clase selected 
+          -->
     <li *ngFor="let hero of heroes"  [class.selected]="hero === selectedHero" (click)="onSelect(hero)">
      <span class="hero-element">
        <span class="badge">{{hero._id}}</span> {{hero.name}}
@@ -11,6 +14,7 @@
     </li>
 </ul>
 
+<!-- si hay algun heroe seleccionado de la lista de arriba muestra en el div el hero en detalle -->
 <div *ngIf="selectedHero">
     <h2>
         {{selectedHero.name | uppercase}} is my hero

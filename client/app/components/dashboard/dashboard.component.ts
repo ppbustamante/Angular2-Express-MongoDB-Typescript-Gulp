@@ -14,18 +14,24 @@ import { Router } from 'angular2/router';
 })
 
 export class DashboardComponent implements OnInit {
-    heroes: Hero[] = [];
 
-    constructor(
-        private router: Router,
-        private heroService: HeroService) {
+    heroes: Hero[] = []; // variable heroes es un arreglo de la clase Hero (haremos binding con la vista enviando esta variable )
+
+    constructor(private router: Router,private heroService: HeroService) {
+
     }
-
+     
+    /*  Al iniciar la Clase llama a este metodo el que llama al servicio que consume la API
+     *  retornando todos los heroes guardandolo en el atributo heroes (this.heroes) de la clase
+     */  
     ngOnInit() {
         this.heroService.getHeroes()
             .then(heroes => this.heroes = heroes);
     }
 
+    /*  Recibe un objeto de la clase Hero para luego ir a la ruta de nombre HeroDetail @RouteConfig con el id 
+     *  correspondiente
+     */
     gotoDetail(hero: Hero) {
         let link = ['HeroDetail', { id: hero._id }];
         this.router.navigate(link);
