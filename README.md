@@ -19,7 +19,7 @@ It also uses Gulp for running task and TsLint.The seed application is built over
 ## Steps to Run
 ```sh
     npm install      <= install all the npm Dependencies
-    npm build        <= build client and server application.
+    gulp build        <= build client and server application.
     npm start        <= start the Nodemon and watch for changes.
 ```
 
